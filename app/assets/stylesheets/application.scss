@@ -16,3 +16,9 @@
 .mw-xl {
   max-width: 1200px;
 }
+/*
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap/scss/bootstrap";
