@@ -1,4 +1,5 @@
 class Movie < ApplicationRecord
+  validates :genre, :title, :url, presence: true
 
   enum genre: {
     invisible: 0, # 非表示

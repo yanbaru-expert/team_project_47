@@ -1,4 +1,5 @@
 class Text < ApplicationRecord
+  validates :genre, :title, :content, presence: true
 
   enum genre: {
     invisible: 0, # 非表示
