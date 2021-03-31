@@ -20,6 +20,7 @@ end
 require "csv"
 class ImportCsv
   def self.import(path)
+    Text.destroy_all
     CSV.foreach(path, headers: true) do |row|
       Text.create!(
         genre: row["genre"], # CSVデータのgenre列の情報を指定して読み込む
