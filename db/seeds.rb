@@ -16,17 +16,28 @@ User.find_or_create_by!(email: EMAIL) do |user|
   puts "ユーザーの初期データインポートに成功しました。"
 end
 
-# CSVデータのパスを引数として受け取り、インポート処理を実行
+
 require "csv"
 class ImportCsv
+  # CSVデータのパスを引数として受け取り、インポート処理を実行
   def self.import(path)
-    Text.destroy_all
+    # インポートするデータを格納するための空配列
+    list = []
+    # CSVファイルからインポートしたデータを格納
     CSV.foreach(path, headers: true) do |row|
-      Text.create!(
-        genre: row["genre"], # CSVデータのgenre列の情報を指定して読み込む
-        title: row["title"], # CSVデータのtitle列の情報を指定して読み込む
-        contnent: row["contnent"] # CSVデータのcontent列の情報を指定して読み込む
-      )
+      list << row.to_h
     end
+    # メソッドの戻り値をインポートしたデータの配列とする
+    list
   end
+
+  def self.text_data
+    # importメソッドを呼び出し、テキストデータの配列を生成
+    list = import('db/csv_data/text_data')
+
+    puts "インポート処理を開始"
+    Text.create!(list)
+    puts "インポート完了!!"
+  end
+
 end
