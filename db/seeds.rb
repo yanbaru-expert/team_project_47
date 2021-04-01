@@ -20,6 +20,11 @@ end
 require "csv"
 class ImportCsv
   Text.destroy_all #データの初期化
+
+  def transform_values
+
+  end
+
   # CSVデータのパスを引数として受け取り、インポート処理を実行
   def self.import(path)
     # インポートするデータを格納するための空配列
@@ -28,6 +33,7 @@ class ImportCsv
     # CSVファイルからインポートしたデータを格納
     CSV.foreach(path, headers: true) do |row|
       list << row.to_h
+      # row.transform_values{|v| v.to_i if v.is_s?}
     end
     # メソッドの戻り値をインポートしたデータの配列とする
     list
@@ -36,7 +42,6 @@ class ImportCsv
   def self.text_data
     # importメソッドを呼び出し、テキストデータの配列を生成
     list = import('db/csv_data/text_data.csv')
-    # row["genre"].to_i
 
     puts "インポート処理を開始"
     Text.create!(list)
