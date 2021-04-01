@@ -21,10 +21,6 @@ require "csv"
 class ImportCsv
   Text.destroy_all #データの初期化
 
-  def transform_values
-
-  end
-
   # CSVデータのパスを引数として受け取り、インポート処理を実行
   def self.import(path)
     # インポートするデータを格納するための空配列
