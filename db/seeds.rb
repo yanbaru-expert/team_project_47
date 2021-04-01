@@ -27,8 +27,7 @@ class ImportCsv
 
     # CSVファイルからインポートしたデータを格納
     CSV.foreach(path, headers: true) do |row|
-      row.to_h.transform_values{ |v| v.to_i }
-      list << row
+      list << row.to_h
     end
     # メソッドの戻り値をインポートしたデータの配列とする
     list
