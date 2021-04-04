@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-primary fixed-top">
+  <%= link_to "やんばるエキスパート", root_path, class: "navbar-brand" %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle nav-item nav-link active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Ruby
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Ruby/Railsテキスト教材</a>
+          <a class="dropdown-item" href="#">Ruby/Rails動画教材</a>
+          <a class="dropdown-item" href="#">AWSテキスト教材</a>
+          <a class="dropdown-item" href="#">よくある質問集</a>
+          <a class="dropdown-item" href="#">チャレンジ問題集</a>
+        </div>
+      </li>
+      <% if user_signed_in? %>
+        <%= link_to "アカウント編集", edit_user_registration_path, class: "nav-item nav-link active" %>
+        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "nav-item nav-link active" %>
+      <% else %>
+        <%= link_to 'ログイン', user_session_path, class: "nav-item nav-link active" %>
+        <%= link_to '新規登録', new_user_registration_path, class: "nav-item nav-link active" %>
+      <% end %>
+    </div>
+  </div>
+</nav>
