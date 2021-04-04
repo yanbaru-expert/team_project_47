@@ -13,7 +13,7 @@
       <%= render "layouts/header" %>
     </header>
     <main>
-      <div class="base-container <%= max_width %>">
+      <div class="base-container <%= devise_controller? ? 'mw-md' : 'mw-xl' %>">
         <%= yield %>
       </div>
     </main>
