@@ -10,16 +10,10 @@
   </head>
   <body>
     <header>
-      <% if user_signed_in? %>
-        <%= link_to "アカウント編集", edit_user_registration_path %>
-        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } %>
-      <% else %>
-        <%= link_to 'ログイン', user_session_path %>
-        <%= link_to '新規登録', new_user_registration_path %>
-      <% end %>
+      <%= render "layouts/header" %>
     </header>
     <main>
-      <div class="base-container <%= max_width %>">
+      <div class="base-container <%= devise_controller? ? 'mw-md' : 'mw-xl' %>">
         <%= yield %>
       </div>
     </main>
