@@ -27,4 +27,15 @@ body {
  *= require_self
  */
 
-@import "bootstrap/scss/bootstrap";
+@import 'bootstrap/scss/bootstrap';
+.navbar-nav {
+  font-size: 15px;
+}
+
+.navbar {
+  margin: 0 auto;
+}
+
+body {
+  padding-top: 56px;
+}
