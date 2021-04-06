@@ -13,6 +13,7 @@
       <%= render "layouts/header" %>
     </header>
     <main>
+      <%= render "layouts/flash" %>
       <div class="base-container <%= devise_controller? ? 'mw-md' : 'mw-xl' %>">
         <%= yield %>
       </div>
