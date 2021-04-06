@@ -75,6 +75,7 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise-bootstrap-views (1.1.0)
     devise-i18n (1.9.3)
       devise (>= 4.7.1)
     erubi (1.10.0)
@@ -96,7 +97,9 @@ GEM
     marcel (0.3.3)
       mimemagic (~> 0.3.2)
     method_source (1.0.0)
-    mimemagic (0.3.5)
+    mimemagic (0.3.10)
+      nokogiri (~> 1)
+      rake
     mini_mime (1.0.2)
     mini_portile2 (2.5.0)
     minitest (5.14.4)
@@ -209,6 +212,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   devise
+  devise-bootstrap-views (~> 1.0)
   devise-i18n
   jbuilder (~> 2.7)
   listen (~> 3.3)

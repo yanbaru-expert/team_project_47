@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require "import_csv"
 
 # テストユーザーを作成
 EMAIL = "test@example.com"
@@ -15,3 +16,5 @@ User.find_or_create_by!(email: EMAIL) do |user|
   user.password = PASSWORD
   puts "ユーザーの初期データインポートに成功しました。"
 end
+
+ImportCsv.text_data

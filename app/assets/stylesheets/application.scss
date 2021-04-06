@@ -1,6 +1,7 @@
 .base-container {
-  margin: 0 auto;
-  padding: 1rem;
+  @extend .container-fluid;
+  max-width: var(--breakpoint-lg);
+  padding: 30px 15px;
 }
 
 /* max-width */
@@ -16,12 +17,28 @@
 .mw-xl {
   max-width: 1200px;
 }
+
+body {
+  padding-top: 56px;
+}
+
 /*
  *= require_tree .
  *= require_self
  */
 
-@import "bootstrap/scss/bootstrap";
+@import 'bootstrap/scss/bootstrap';
+.navbar-nav {
+  font-size: 15px;
+}
+
+.navbar {
+  margin: 0 auto;
+}
+
+body {
+  padding-top: 56px;
+}
 
 // flash
 .alert-notice {
