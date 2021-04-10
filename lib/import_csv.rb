@@ -20,9 +20,18 @@ class ImportCsv
     list = import('db/csv_data/text_data.csv')
     Text.destroy_all #データの初期化
 
-    puts "インポート処理を開始"
+    puts "テキスト教材インポート処理を開始"
     Text.create!(list)
-    puts "インポート完了!!"
+    puts "テキスト教材のCSVデータインポート完了!!"
   end
 
+  def self.movie_data
+    # importメソッドを呼び出し、テキストデータの配列を生成
+    list = import('db/csv_data/movie_data.csv')
+    Movie.destroy_all #データの初期化
+
+    puts "動画教材のCSVデータインポート処理を開始"
+    Movie.create!(list)
+    puts "動画教材のCSVデータインポート完了!!"
+  end
 end

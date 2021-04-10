@@ -18,3 +18,4 @@ User.find_or_create_by!(email: EMAIL) do |user|
 end
 
 ImportCsv.text_data
+ImportCsv.movie_data
