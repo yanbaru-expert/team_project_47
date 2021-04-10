@@ -5,11 +5,11 @@ default: &default
 
 development:
   <<: *default
-  database: team_project_46_development
+  database: team_project_47_development
 
 test:
   <<: *default
-  database: team_project_46_test
+  database: team_project_47_test
 
 production:
   <<: *default
