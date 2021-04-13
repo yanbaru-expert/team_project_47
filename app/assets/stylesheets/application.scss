@@ -1,3 +1,4 @@
+@import 'bootstrap/scss/bootstrap';
 .base-container {
   @extend .container-fluid;
   max-width: var(--breakpoint-lg);
@@ -27,7 +28,7 @@ body {
  *= require_self
  */
 
-@import 'bootstrap/scss/bootstrap';
+
 .navbar-nav {
   font-size: 15px;
 }
