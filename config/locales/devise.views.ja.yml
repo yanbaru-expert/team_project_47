@@ -1,11 +1,30 @@
 ja:
+  attributes:
+    author_type: 編集者
+    body: 本体
+    created_at: 作成日
+    resource_type: リソース
+    namespace: 名称
+    updated_at: 更新日
   activerecord:
     attributes:
+      admin_user:
+        current_sign_in_at: 現在のログイン時刻
+        email: Eメール
+        sign_in_count: ログイン回数
+      active_admin_comment:
+      movie:
+        genre: ジャンル
+        title: タイトル
+        url: URL
+      text:
+        content: 内容
+        genre: ジャンル
+        title: タイトル
       user:
         confirmation_sent_at: パスワード確認送信時刻
         confirmation_token: パスワード確認用トークン
         confirmed_at: パスワード確認時刻
-        created_at: 作成日
         current_password: 現在のパスワード
         current_sign_in_at: 現在のログイン時刻
         current_sign_in_ip: 現在のログインIPアドレス
@@ -27,6 +46,10 @@ ja:
         updated_at: 更新日
     models:
       user: アカウント
+      admin_user: 管理者ユーザー
+      comment: コメント
+      movie: 動画
+      text: テキスト
   devise:
     confirmations:
       confirmed: メールアドレスが確認できました。
