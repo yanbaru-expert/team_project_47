@@ -11,6 +11,9 @@ ja:
       admin_user:
         current_sign_in_at: 現在のログイン時刻
         email: Eメール
+        remember_created_at: ログイン記憶時刻
+        reset_password_sent_at: パスワードリセット送信時刻
+        reset_password_token: パスワードリセット用トークン
         sign_in_count: ログイン回数
       active_admin_comment:
       movie:
