@@ -49,3 +49,8 @@ body {
 .alert-alert {
   @extend .alert-danger;
 }
+
+// pagination
+.pagination {
+  justify-content: center;
+}
