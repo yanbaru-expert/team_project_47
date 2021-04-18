@@ -39,3 +39,20 @@ body {
 body {
   padding-top: 56px;
 }
+
+// 教材一覧カード
+div.card-contents {
+  height: 300px;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+div.text-card {
+  padding-left: 9px;
+  padding-right: 9px;
+  margin-bottom: 70px;
+}
+
+p.card-text {
+  font-size: 15px;
+}
