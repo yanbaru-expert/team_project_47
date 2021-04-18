@@ -44,11 +44,9 @@ ActiveRecord::Schema.define(version: 2021_04_18_045737) do
   create_table "likes", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "movie_id", null: false
-    t.bigint "text_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["movie_id"], name: "index_likes_on_movie_id"
-    t.index ["text_id"], name: "index_likes_on_text_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
@@ -81,6 +79,5 @@ ActiveRecord::Schema.define(version: 2021_04_18_045737) do
   end
 
   add_foreign_key "likes", "movies"
-  add_foreign_key "likes", "texts"
   add_foreign_key "likes", "users"
 end

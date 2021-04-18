@@ -1,5 +1,4 @@
 class Text < ApplicationRecord
-  has_many :likes, dependent: :destroy
   validates :genre, :title, :content, presence: true
 
   def liked_by?(user)
