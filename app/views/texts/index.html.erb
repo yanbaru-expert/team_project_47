@@ -1,2 +1,14 @@
-<h1>top page</h1>
-<button type="button" class="btn btn-primary btn-block">Primary</button>
+<h2 class = "text-center">Ruby/Rails テキスト教材</h2>
+<div class= "container-fluid" >
+  <div class = "row">
+    <% @texts.each do |text| %>
+      <div class= "col-12 col-md-6 col-lg-4">
+        <div class="card border-dark" >
+          <div class="card-body">
+            <p class="card-text"><%= text.title %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
