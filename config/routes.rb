@@ -5,4 +5,7 @@ Rails.application.routes.draw do
   root "texts#index"
   resources :texts, only: [:index, :show]
   resources :movies, only: [:index]
+  resources :movies do
+    resource :likes, only: [:create, :destroy]
+  end
 end
