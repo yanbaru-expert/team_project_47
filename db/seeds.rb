@@ -17,6 +17,12 @@ User.find_or_create_by!(email: EMAIL) do |user|
   puts "ユーザーの初期データインポートに成功しました。"
 end
 
+
+# 開発用の初期データ
+user1 = User.create!(email: "satou@example.com", password: "password")
+user2 = User.create!(email: "suzuki@example.com", password: "password")
+user3 = User.create!(email: "tanaka@example.com", password: "password")
+
 ADMIN_EMAIL = "admin@example.com"
 ADMIN_PASSWORD = "password"
 PASSWORD_CONFIRMATION = "password"

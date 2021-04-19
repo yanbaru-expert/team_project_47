@@ -3,5 +3,9 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :users
   root "texts#index"
-  resources :movies
+  resources :texts, only: [:index, :show]
+  resources :movies, only: [:index]
+  resources :movies do
+    resource :likes, only: [:create, :destroy]
+  end
 end
