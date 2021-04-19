@@ -1,5 +1,10 @@
 class Movie < ApplicationRecord
+  has_many :likes, dependent: :destroy
   validates :genre, :title, :url, presence: true
+
+  def liked_by?(user)
+    likes.find_by(user_id: user.id).present?
+  end
 
   enum genre: {
     invisible: 0, # 非表示
