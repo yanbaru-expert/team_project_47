@@ -28,7 +28,6 @@ body {
  *= require_self
  */
 
-
 .navbar-nav {
   font-size: 15px;
 }
@@ -56,6 +55,7 @@ div.text-card {
 
 p.card-text {
   font-size: 15px;
+}
 // flash
 .alert-notice {
   @extend .alert-success;
