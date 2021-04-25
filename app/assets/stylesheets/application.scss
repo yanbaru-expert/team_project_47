@@ -21,8 +21,14 @@
 
 body {
   padding-top: 56px;
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
 }
 
+main {
+  flex: 1;
+}
 /*
  *= require_tree .
  *= require_self
@@ -34,10 +40,6 @@ body {
 
 .navbar {
   margin: 0 auto;
-}
-
-body {
-  padding-top: 56px;
 }
 
 // 教材一覧カード
@@ -63,4 +65,22 @@ p.card-text {
 
 .alert-alert {
   @extend .alert-danger;
+}
+
+// footer
+footer {
+  width: 100%;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+footer a {
+  padding: 0 20px;
+  font-size: 20px;
+}
+
+.text-white {
+  color: #fff !important;
 }
