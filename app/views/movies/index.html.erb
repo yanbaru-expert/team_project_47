@@ -13,11 +13,10 @@
               <% else %>
                 <%= render "dislike", movie: movie.id %>
               <% end %>
-            </div>
           </div>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
-  <%= paginate @movies %>
 </div>
+<%= paginate @movies %>
