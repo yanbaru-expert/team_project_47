@@ -8,4 +8,8 @@ Rails.application.routes.draw do
   resources :movies do
     resource :likes, only: [:create, :destroy]
   end
+
+  resources :texts do
+    resource :read_progresses, only: [:create, :destroy]
+  end
 end

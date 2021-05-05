@@ -1,8 +1,9 @@
 class Text < ApplicationRecord
+  has_many :read_progresses, dependent: :destroy
   validates :genre, :title, :content, presence: true
 
-  def liked_by?(user)
-    likes.find_by(user_id: user.id).present?
+  def read_by?(user)
+    read_progresses.find_by(user_id: user.id).present?
   end
 
   enum genre: {
