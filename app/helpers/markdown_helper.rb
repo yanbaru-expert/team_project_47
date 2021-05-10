@@ -1,36 +1,8 @@
 module MarkdownHelper
-  def markdown(text)
-    options = {
-      filter_html: true,     # htmlを出力しない
-      hard_wrap: true,     # マークダウン中の空行をhtmlに置き換え
-      space_after_headers: true, # # と文字の間にスペースを要求
-    }
-
-    extensions = {
-      autolink: true,  # <>で囲まれてなくてもリンクを認識
-      space_after_headers: true,
-      no_intra_emphasis: true,  # 単語中の強調を認識しない
-      fenced_code_blocks: true,  # フェンスのあるコードブロックを認識
-      strikethrough: true,  # ~ 2つで取り消し線
-      tables: true,  # テーブルを認識
-      hard_wrap: true,
-      xhtml: true,
-      lax_html_blocks: true,
-      underline: true,  # 斜線(* *)
-      highlight: true,  # ハイライト(== ==)
-      quote: true,  # 引用符(" ")
-      footnotes: true,  # 脚注( ^[1] )
-    }
-
-    renderer = Redcarpet::Render::HTML.new(options)
-    markdown = Redcarpet::Markdown.new(renderer, extensions)
-
-    markdown.render(text).html_safe
-  end
-
   class HTMLwithCoderay < Redcarpet::Render::HTML
     def block_code(code, language)
-      language = language.split(":")[0]
+      language = language.split(":")[0] if language.present?
+
       case language.to_s
       when "rb"
         lang = "ruby"
@@ -48,5 +20,25 @@ module MarkdownHelper
 
       CodeRay.scan(code, lang).div
     end
+  end
+
+  def markdown(text)
+    html_render = HTMLwithCoderay.new(
+      filter_html: true,
+      hard_wrap: true,
+    )
+    options = {
+      autolink: true,
+      space_after_headers: true,
+      no_intra_emphasis: true,
+      fenced_code_blocks: true,
+      tables: true,
+      hard_wrap: true,
+      xhtml: true,
+      lax_html_blocks: true,
+      strikethrough: true,
+    }
+    markdown = Redcarpet::Markdown.new(html_render, options)
+    markdown.render(text).html_safe
   end
 end
