@@ -1,21 +1,22 @@
 <h1 class="text-center">Ruby/Rails 動画教材</h1>
-  <div class="container-fluid">
-    <div class="row">
-      <% @movies.each.with_index(1) do |movie, id| %>
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="card border-dark" style="height: 24rem;">
-            <iframe height="50%" src=<%= movie.url %> frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <div class="card-body">
-              <p class="card-text">Lv.<%= id %>:<%= movie.title %></p>
-              <p id="movie-<%= movie.id %>">
+<div class="container-fluid">
+  <div class="row">
+    <% @movies.each.with_index(@movies.offset_value + 1) do |movie, id| %>
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card border-dark" style="height: 24rem;">
+          <iframe height="50%" src=<%= movie.url %> frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <div class="card-body">
+            <p class="card-text">Lv.<%= id %>:<%= movie.title %></p>
+            <p id="movie-<%= movie.id %>">
               <% if movie.liked_by?(current_user) %>
                 <%= render "like", movie: movie.id %>
               <% else %>
                 <%= render "dislike", movie: movie.id %>
               <% end %>
-            </div>
           </div>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
+</div>
+<%= paginate @movies %>

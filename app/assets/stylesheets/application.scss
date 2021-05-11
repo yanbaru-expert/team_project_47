@@ -67,6 +67,11 @@ p.card-text {
   @extend .alert-danger;
 }
 
+// pagination
+.pagination {
+  justify-content: center;
+}
+
 // footer
 footer {
   width: 100%;
