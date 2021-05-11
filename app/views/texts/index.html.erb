@@ -1,4 +1,12 @@
 <h2 class = "text-center">Ruby/Rails テキスト教材</h2>
+  <div class = "serch container">
+    <%= search_form_for @q do |f| %>
+      <div class="d-flex justify-content-center mb-3" style="width: 300px;">
+        <%= f.search_field :title_cont, class:"form-control col-xs-4", placeholder:"教材を探す" %>
+        <%= f.submit "検索", class:"ml-2"%> 
+      </div>
+    <% end %>
+  </div>
 
   <div class = "row">
     <% @texts.each do |text, id| %>
