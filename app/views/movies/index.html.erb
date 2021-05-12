@@ -1,4 +1,13 @@
-<h1 class="text-center">Ruby/Rails 動画教材</h1>
+<h2 class="text-center">Ruby/Rails 動画教材</h2>
+  <div class = "seach">
+    <%= search_form_for @q do |f| %>
+      <div class="d-flex justify-content-center mb-3" style="width: 300px;">
+        <%= f.search_field :title_cont, class:"form-control col-xs-4", placeholder:"動画を探す" %>
+        <%= f.submit "検索", class:"ml-2"%> 
+      </div>
+    <% end %>
+  </div>
+
 <div class="container-fluid">
   <div class="row">
     <% @movies.each.with_index(@movies.offset_value + 1) do |movie, id| %>
