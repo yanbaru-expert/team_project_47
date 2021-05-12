@@ -1,7 +1,7 @@
 class TextsController < ApplicationController
   def index
-    @q = Text.ransack(params[:q])
-    @texts = @q.result(distinct: true).page(params[:page])
+    @q = Text.where(genre: ["basic", "git", "ruby", "rails"]).ransack(params[:q])
+    @texts = @q.result.order(id: :asc).page(params[:page])
   end
 
   def show
