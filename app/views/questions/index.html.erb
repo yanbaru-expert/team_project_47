@@ -1,0 +1,19 @@
+<h1 class="text-center mb-4">よくある質問集</h1>
+<div class="table-container mt-4">
+  <table class="table table-striped">
+    <thead class="text-white base-bg-color">
+      <tr class="bg-primary">
+        <th>ジャンル</th>
+        <th>タイトル</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @questions.each do |question| %>
+        <tr>
+          <td class="text-nowrap align-middle"><%= question.genre %></td>
+          <td class="text-nowrap align-middle"><%= link_to "#{question.title}", question%></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

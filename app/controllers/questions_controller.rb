@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   def index
-    @questions = Question.where(genre: ["basic", "git", "ruby", "rails"]).order(id: :asc)
+    @questions = Question.order(id: :asc)
   end
 
   def show
