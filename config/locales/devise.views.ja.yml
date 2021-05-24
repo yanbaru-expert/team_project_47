@@ -24,6 +24,11 @@ ja:
         content: 内容
         genre: ジャンル
         title: タイトル
+      question:
+        genre: ジャンル
+        title: タイトル
+        content: 質問内容
+        answer: 回答
       user:
         confirmation_sent_at: パスワード確認送信時刻
         confirmation_token: パスワード確認用トークン
@@ -53,6 +58,7 @@ ja:
       comment: コメント
       movie: 動画
       text: テキスト
+      questions: 質問集
   devise:
     confirmations:
       confirmed: メールアドレスが確認できました。

@@ -14,10 +14,10 @@
             Ruby
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="texts">Ruby/Railsテキスト教材</a>
-            <a class="dropdown-item" href="movies">Ruby/Rails動画教材</a>
+            <a class="dropdown-item" href="/texts">Ruby/Railsテキスト教材</a>
+            <a class="dropdown-item" href="/movies">Ruby/Rails動画教材</a>
             <a class="dropdown-item" href="#">AWSテキスト教材</a>
-            <a class="dropdown-item" href="#">よくある質問集</a>
+            <a class="dropdown-item" href="/questions">よくある質問集</a>
             <a class="dropdown-item" href="#">チャレンジ問題集</a>
           </div>
         </li>
@@ -71,11 +71,11 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="#">進捗管理</a>
             <% if user_signed_in? %>
-            <!-- ログイン時 -->
+              <!-- ログイン時 -->
               <%= link_to "アカウント編集", edit_user_registration_path, class: "dropdown-item"%>
               <%= link_to "ログアウト", destroy_user_session_path, class: "dropdown-item", method: :delete, data: { confirm: "本当によろしいですか" } %>
             <% else %>
-            <!-- 非ログイン時 -->
+              <!-- 非ログイン時 -->
               <%= link_to "ログイン", new_user_session_path, class: "dropdown-item" %>
               <%= link_to "新規登録", new_user_registration_path, class: "dropdown-item" %>
             <% end %>
