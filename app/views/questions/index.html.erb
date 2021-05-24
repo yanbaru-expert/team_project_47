@@ -1,52 +1,39 @@
 <h2 class="text-center mb-4">よくある質問集</h2>
-<%= search_form_for @q do |f| %>
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-    <label class="form-check-label" for="flexCheckDefault">
-      Ruby
-    </label>
-  </div>
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-    <label class="form-check-label" for="flexCheckDefault">
-      Ruby on Rails
-    </label>
-  </div>
-
-  <div class="form-group">
-    <div class="input-group mb-2">
-      <div class="input-group-prepend">
-        <div class="input-group-text">タイトル</div>
+  <%= search_form_for @q do |f| %>
+    <div class="form-group">
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text">タイトル</div>
+        </div>
+        <input type="search" class="form-control" id="q_title_cont" name="q[title_cont]" <%= f.search_field :content_cont %>
       </div>
-      <input type="search" class="form-control" id="q_title_cont" name="q[title_cont]">
     </div>
-  </div>
-  <div class="form-group">
-    <div class="input-group mb-2">
-      <div class="input-group-prepend">
-        <div class="input-group-text">キーワード</div>
+    <div class="form-group">
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text">キーワード</div>
+        </div>
+        <input type="search" class="form-control" id="q_content_or_answer_or_title_cont" name="q[content_or_answer_or_title_cont]" <%= f.search_field :content_cont %>
       </div>
-      <input type="search" class="form-control" id="q_content_or_answer_or_title_cont" name="q[content_or_answer_or_title_cont]">
     </div>
-  </div>
-  <input type="submit" class="btn btn-primary btn-block" value="検索">
-<% end %>
+    <input type="submit" class="btn btn-primary btn-block" value="検索">
+  <% end %>
 
-<div class="table-container mt-4">
-  <table class="table table-striped">
-    <thead class="text-white base-bg-color">
-      <tr class="bg-primary">
-        <th>ジャンル</th>
-        <th>タイトル</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @questions.each do |question| %>
-        <tr>
-          <td class="text-nowrap align-middle"><%= question.genre %></td>
-          <td class="text-nowrap align-middle"><%= link_to "#{question.title}", question%></td>
+  <div class="table-container mt-4">
+    <table class="table table-striped">
+      <thead class="text-white base-bg-color">
+        <tr class="bg-primary">
+          <th>ジャンル</th>
+          <th>タイトル</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+      </thead>
+      <tbody>
+        <% @questions.each do |question| %>
+          <tr>
+            <td class="text-nowrap align-middle"><%= question.genre %></td>
+            <td class="text-nowrap align-middle"><%= link_to "#{question.title}", question%></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
